@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Тест Тестов",
+      "email": "testovtest@gmail.com",
+      "phone": "+7 (999) 123-45-67",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "name": "Снежана Абдурахманова",
+      "email": "snezhana_hi@gmail.com",
+      "phone": "+7 (981) 801-08-89",
+      "password": "qwerty"
+    },
+    {
+      "id": 3,
+      "name": "Максим Ашкудишкин",
+      "email": "ashk228@gmail.com",
+      "phone": "+7 (987) 641-31-51",
+      "password": "password"
+    },
+    {
+      "id": "ce78",
+      "name": "Пупа Васькин",
+      "email": "pupalupa@gmail.com",
+      "password": "asd",
+      "phone": "+374 555-97-211"
+    }
+  ],
+  "listings": [
+    {
+      "id": 1,
+      "title": "Квартира-студия у метро Владимирская",
+      "address": "Санкт-Петербург, Центральный район",
+      "price": 45000,
+      "image": "studiya_v_centre.jpeg",
+      "rooms": 1,
+      "area": 24,
+      "floor": "4/6",
+      "type": "квартира"
+    },
+    {
+      "id": 2,
+      "title": "2‑к. квартира с видом на реку",
+      "address": "Санкт-Петербург, Василеостровский район",
+      "price": 70000,
+      "image": "s_vidom_na_reku.jpeg",
+      "rooms": 2,
+      "area": 56,
+      "floor": "8/16",
+      "type": "квартира"
+    },
+    {
+      "id": 3,
+      "title": "Загородный дом с террасой",
+      "address": "Ленинградская область, Всеволожский район",
+      "price": 90000,
+      "image": "zagorodny_dom_2.jpg",
+      "rooms": 4,
+      "area": 120,
+      "floor": "2 этажа",
+      "type": "дом"
+    }
+  ]
+}
