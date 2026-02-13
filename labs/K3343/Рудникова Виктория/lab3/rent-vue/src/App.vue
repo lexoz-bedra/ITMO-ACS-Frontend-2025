@@ -1,8 +1,9 @@
 <script setup>
+import BaseLayout from '@/layout/BaseLayout.vue'
 </script>
 
 <template>
-  <router-view />
+  <BaseLayout />
 </template>
 
 <style scoped>
