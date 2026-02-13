@@ -26,30 +26,27 @@
     </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" role="navigation" aria-label="Основная навигация">
       <div class="container">
-        <a class="navbar-brand fw-semibold" href="index.html">
-          RentEasy
-        </a>
+        <a class="navbar-brand fw-semibold" href="index.html">RentEasy</a>
         <button
           class="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarMain"
+          aria-label="Открыть меню навигации"
+          aria-expanded="false"
+          aria-controls="navbarMain"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarMain">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">
-                Поиск
-              </a>
+              <a class="nav-link" href="index.html">Поиск</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="profile.html">
-                Личный кабинет
-              </a>
+              <a class="nav-link" href="profile.html">Личный кабинет</a>
             </li>
           </ul>
           <div class="d-flex gap-2">
@@ -64,14 +61,13 @@
       </div>
     </nav>
 
-    <main class="auth-wrapper d-flex align-items-center py-5">
+    <main class="auth-wrapper d-flex align-items-center py-5" role="main">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-8 col-lg-6">
-            <!-- Вход -->
-            <section class="card auth-card shadow-sm" id="login-section">
+            <section class="card auth-card shadow-sm" id="login-section" role="region" aria-labelledby="login-title">
               <div class="card-body p-4">
-                <h1 class="h4 mb-3">Вход</h1>
+                <h1 class="h4 mb-3" id="login-title">Вход</h1>
                 <p class="text-muted small mb-4">
                   Войдите в аккаунт, чтобы управлять объявлениями и бронированиями.
                 </p>
@@ -125,10 +121,9 @@
               </div>
             </section>
 
-            <!-- Регистрация -->
-            <section class="card auth-card shadow-sm d-none" id="register-section">
+            <section class="card auth-card shadow-sm d-none" id="register-section" role="region" aria-labelledby="register-title">
               <div class="card-body p-4">
-                <h2 class="h4 mb-3">Регистрация</h2>
+                <h2 class="h4 mb-3" id="register-title">Регистрация</h2>
                 <p class="text-muted small mb-4">
                   Создайте аккаунт, чтобы снимать и сдавать недвижимость.
                 </p>
@@ -214,10 +209,9 @@
               </div>
             </section>
 
-            <!-- Восстановление пароля -->
-            <section class="card auth-card shadow-sm d-none mt-3" id="forgot-section">
+            <section class="card auth-card shadow-sm d-none mt-3" id="forgot-section" role="region" aria-labelledby="forgot-title">
               <div class="card-body p-4">
-                <h2 class="h5 mb-3">Восстановление пароля</h2>
+                <h2 class="h5 mb-3" id="forgot-title">Восстановление пароля</h2>
                 <p class="text-muted small mb-4">
                   Укажите email, на который мы отправим ссылку для восстановления пароля.
                 </p>
@@ -249,7 +243,7 @@
       </div>
     </main>
 
-    <footer class="border-top py-3">
+    <footer class="border-top py-3" role="contentinfo">
       <div class="container text-muted small text-center">
         © 2026 RentEasy - сервис аренды недвижимости
       </div>
