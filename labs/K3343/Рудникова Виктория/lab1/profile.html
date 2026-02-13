@@ -7,6 +7,21 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
       body { padding-top: 4.5rem; background: #f5f5f7; }
+      .profile-header {
+        background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+        color: #fff;
+      }
+      .avatar-circle {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
     </style>
   </head>
   <body>
@@ -22,30 +37,139 @@
             <li class="nav-item"><span class="nav-link active">Личный кабинет</span></li>
           </ul>
           <div class="d-flex gap-2">
-            <a class="btn btn-outline-light btn-sm" href="login_register.html#login">Вход</a>
-            <a class="btn btn-primary btn-sm" href="login_register.html#register">Регистрация</a>
+            <span class="navbar-text text-white-50 small d-none d-md-inline me-2" id="navEmail">—</span>
+            <a class="btn btn-outline-light btn-sm" href="login_register.html#login">Выйти</a>
           </div>
         </div>
       </div>
     </nav>
 
-    <main class="container py-5">
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <div class="card shadow-sm">
-            <div class="card-body p-4">
-              <h1 class="h4 mb-4">Личный кабинет</h1>
-              <p class="mb-1 text-muted small">Имя</p>
-              <p class="mb-3" id="profileName">—</p>
-              <p class="mb-1 text-muted small">Email</p>
-              <p class="mb-0" id="profileEmail">—</p>
-            </div>
+    <header class="profile-header py-4 mb-4">
+      <div class="container">
+        <div class="row align-items-center g-3">
+          <div class="col-auto">
+            <div class="avatar-circle" id="avatarInitials">ТТ</div>
+          </div>
+          <div class="col">
+            <h1 class="h4 mb-1" id="profileName">Тест Тестов</h1>
+            <p class="mb-1 small" id="profileContact">testovtest@gmail.com · +7 (999) 123‑45‑67</p>
+            <span class="badge bg-light text-dark" style="font-size: 0.75rem;">Арендатор и арендодатель</span>
           </div>
         </div>
       </div>
+    </header>
+
+    <main class="container mb-5">
+      <div class="row g-4">
+        <section class="col-lg-4">
+          <div class="card shadow-sm mb-4">
+            <div class="card-body">
+              <h2 class="h5 mb-3">Профиль</h2>
+              <dl class="row mb-0 small">
+                <dt class="col-5 text-muted">Имя</dt>
+                <dd class="col-7" id="sidebarName">Тест Тестов</dd>
+                <dt class="col-5 text-muted">Email</dt>
+                <dd class="col-7" id="sidebarEmail">testovtest@gmail.com</dd>
+                <dt class="col-5 text-muted">Телефон</dt>
+                <dd class="col-7">+7 (999) 123‑45‑67</dd>
+                <dt class="col-5 text-muted">Город</dt>
+                <dd class="col-7">Санкт‑Петербург</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h2 class="h6 mb-3">Быстрые действия</h2>
+              <div class="d-grid gap-2">
+                <a href="index.html" class="btn btn-outline-primary btn-sm">Найти новое жильё</a>
+                <button type="button" class="btn btn-outline-secondary btn-sm" disabled>Добавить объявление</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="col-lg-8">
+          <div class="card shadow-sm mb-4">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h5 mb-0">Моя аренда</h2>
+                <span class="badge bg-success">1 активная аренда</span>
+              </div>
+              <article class="row g-3 align-items-center">
+                <div class="col-md-4">
+                  <img src="s_vidom_na_reku.jpeg" class="img-fluid rounded" alt="2‑к квартира с видом на реку" />
+                </div>
+                <div class="col-md-8">
+                  <h3 class="h6 mb-1">2‑к квартира с видом на реку</h3>
+                  <p class="small text-muted mb-2">Санкт‑Петербург, Василеостровский район · до 30.06.2026</p>
+                  <p class="fw-semibold mb-2">70 000 ₽ / месяц</p>
+                  <p class="small mb-2">Оплачен текущий месяц. Следующий платёж до 5 числа.</p>
+                  <a href="apartment.html" class="btn btn-outline-primary btn-sm">Открыть объявление</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="card shadow-sm mb-4">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h2 class="h5 mb-0">Мои объявления</h2>
+                <span class="text-muted small">2 объекта</span>
+              </div>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <article class="border rounded p-3 h-100">
+                    <h3 class="h6 mb-1">Студия у метро Владимирская</h3>
+                    <p class="small text-muted mb-1">Санкт‑Петербург, Центральный район</p>
+                    <p class="fw-semibold mb-2">45 000 ₽ / месяц</p>
+                    <span class="badge bg-success mb-2">Сдаётся</span>
+                    <p class="small mb-2">Есть активные отклики от 3 пользователей.</p>
+                    <a href="apartment.html" class="btn btn-outline-primary btn-sm">Открыть объявление</a>
+                  </article>
+                </div>
+                <div class="col-md-6">
+                  <article class="border rounded p-3 h-100">
+                    <h3 class="h6 mb-1">Загородный дом с террасой</h3>
+                    <p class="small text-muted mb-1">Ленинградская область, Всеволожский район</p>
+                    <p class="fw-semibold mb-2">90 000 ₽ / месяц</p>
+                    <span class="badge bg-secondary mb-2">Неактивно</span>
+                    <p class="small mb-2">Объявление скрыто. Можно активировать позже.</p>
+                    <button type="button" class="btn btn-outline-secondary btn-sm" disabled>Редактировать</button>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h2 class="h5 mb-3">История сообщений и сделок</h2>
+              <ul class="list-group list-group-flush small">
+                <li class="list-group-item px-0">
+                  <div class="d-flex justify-content-between">
+                    <span>Сообщение от <strong>Алексея</strong> по объявлению «Загородный дом с террасой»</span>
+                    <span class="text-muted">10.02.2026</span>
+                  </div>
+                  <p class="mb-1">«Здравствуйте! Можно ли посмотреть дом в ближайшие выходные?»</p>
+                </li>
+                <li class="list-group-item px-0">
+                  <div class="d-flex justify-content-between">
+                    <span>Оформлена аренда по объявлению «2‑к квартира с видом на реку»</span>
+                    <span class="text-muted">01.02.2026</span>
+                  </div>
+                  <p class="mb-1">Договор до 30.06.2026. Арендная плата — 70 000 ₽.</p>
+                </li>
+                <li class="list-group-item px-0 text-muted">
+                  Здесь отображаются переписки и совершённые сделки.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
-    <footer class="border-top py-3 mt-5">
+    <footer class="border-top py-3 mt-auto">
       <div class="container text-muted small text-center">
         © 2026 RentEasy - сервис аренды недвижимости
       </div>
@@ -54,9 +178,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
       (function () {
+        // заменяем пока что параметры на хардкод
         var params = new URLSearchParams(window.location.search);
-        document.getElementById("profileName").textContent = params.get("name") || "—";
-        document.getElementById("profileEmail").textContent = params.get("email") || "—";
+        var name = params.get("name") || "Тест Тестов";
+        var email = params.get("email") || "testovtest@gmail.com";
+
+        document.getElementById("profileName").textContent = name;
+        document.getElementById("sidebarName").textContent = name;
+        document.getElementById("sidebarEmail").textContent = email;
+        document.getElementById("navEmail").textContent = "Вы вошли как: " + email;
+
+        var initials = name.split(/\s+/).map(function (w) { return w[0] || ""; }).join("").slice(0, 2).toUpperCase();
+        if (initials) document.getElementById("avatarInitials").textContent = initials;
       })();
     </script>
   </body>
