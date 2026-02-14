@@ -15,12 +15,16 @@
         <div class="d-flex align-items-center gap-2 order-lg-3 ms-2 ms-lg-3">
           <button
             type="button"
-            class="btn btn-link theme-toggle text-light p-0 border-0"
-            aria-label="Переключить тему"
-            title="Переключить тему"
+            class="theme-toggle text-light p-0 border-0"
+            :aria-label="theme.toggleLabel"
+            :title="theme.toggleLabel"
+            @click="theme.toggle"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+            <svg v-if="!theme.isDark" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
               <use href="#icon-sun" />
+            </svg>
+            <svg v-else width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+              <use href="#icon-moon" />
             </svg>
           </button>
           <button
@@ -64,12 +68,18 @@
             </li>
           </ul>
           <div class="d-flex align-items-center gap-2">
-            <router-link to="/login" class="btn btn-outline-light btn-sm">
-              Вход
-            </router-link>
-            <router-link to="/register" class="btn btn-primary btn-sm">
-              Регистрация
-            </router-link>
+            <template v-if="authStore.isLoggedIn">
+              <span class="navbar-text text-white-50 small d-none d-md-inline me-2">
+                {{ authStore.userEmail }}
+              </span>
+              <button type="button" class="btn btn-outline-light btn-sm" @click="handleLogout">
+                Выйти
+              </button>
+            </template>
+            <template v-else>
+              <router-link to="/login" class="btn btn-outline-light btn-sm">Вход</router-link>
+              <router-link to="/register" class="btn btn-primary btn-sm">Регистрация</router-link>
+            </template>
           </div>
         </div>
       </div>
@@ -81,7 +91,20 @@
 </template>
 
 <script setup>
+import { useRouter } from 'vue-router'
+import { useAuthStore } from '@/stores'
+import { useTheme } from '@/composables/useTheme'
+
 defineOptions({ name: 'BaseLayout' })
+
+const router = useRouter()
+const authStore = useAuthStore()
+const theme = useTheme()
+
+function handleLogout() {
+  authStore.logout()
+  router.push('/')
+}
 </script>
 
 <style scoped>
